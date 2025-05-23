@@ -81,8 +81,14 @@ header {
 
 .product-card {
   overflow: hidden;
-  clip-path: ellipse(45% 48% at 50% 50%);
+  clip-path: ellipse(46% 48% at 50% 50%);
   height: 280px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
 }
 
 .product-card img {
