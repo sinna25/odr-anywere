@@ -1,14 +1,14 @@
-// 인트로 → 메인 자동 전환 (영상 끝나면 실행)
 document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("introVideo");
   if (video) {
-    video.onended = () => {
+    video.addEventListener("click", function () {
+      video.muted = false;
+      video.play();
       enterSite();
-    };
+    });
   }
 });
 
-// 전환 함수
 function enterSite() {
   const intro = document.getElementById("intro");
   const main = document.getElementById("main");
@@ -21,7 +21,6 @@ function enterSite() {
   }, 500);
 }
 
-// 페이지 전환 함수
 function showPage(pageId) {
   const sections = document.querySelectorAll(".page");
   sections.forEach((section) => {
