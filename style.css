@@ -12,7 +12,7 @@ body {
   cursor: url('cursor.png'), auto;
 }
 
-/* Intro Page */
+/* Intro */
 #intro {
   position: fixed;
   width: 100vw;
@@ -36,7 +36,6 @@ body {
   transition: opacity 1s ease-in-out;
 }
 
-/* Header Navigation */
 header {
   display: flex;
   justify-content: space-between;
@@ -72,7 +71,7 @@ header {
   display: block;
 }
 
-/* Product Grid with SVG Clipping */
+/* Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -81,24 +80,19 @@ header {
 }
 
 .product-card {
-  width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  clip-path: url(#clip-product);
 }
 
-.product-card svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.product-card image {
+.product-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* About Section */
+/* About */
 .about-hero .banner-image {
   width: 100%;
   height: auto;
@@ -134,7 +128,7 @@ header {
   line-height: 2;
 }
 
-/* Account Section */
+/* Account */
 .login-box {
   max-width: 400px;
   margin: 4rem auto;
@@ -181,7 +175,7 @@ header {
   text-decoration: none;
 }
 
-/* Cart Section */
+/* Cart */
 .cart-box {
   text-align: center;
   padding: 4rem 2rem;
@@ -196,11 +190,61 @@ header {
   cursor: pointer;
 }
 
-/* Page View Management */
+/* Page Display */
 .page {
   display: none;
 }
 
 .page.active {
   display: block;
+}
+
+/* Detail Page */
+.product-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.product-detail-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-detail-left img {
+  width: 100%;
+  display: block;
+}
+
+.product-detail-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-detail-right h2 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.product-detail-right p {
+  font-size: 20px;
+  color: #333;
+}
+
+.sizes span {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+#add-to-cart {
+  padding: 0.75rem 2rem;
+  background-color: #121212;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
 }
