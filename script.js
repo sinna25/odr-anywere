@@ -1,4 +1,4 @@
-// 인트로 → 메인으로 전환
+// 인트로 → 메인 전환
 function enterSite() {
   const intro = document.getElementById('intro');
   const main = document.getElementById('main');
@@ -11,7 +11,7 @@ function enterSite() {
   }, 500);
 }
 
-// 페이지 전환 함수
+// 페이지 전환
 function showPage(pageId) {
   const sections = document.querySelectorAll('.page');
   sections.forEach((section) => {
