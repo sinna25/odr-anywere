@@ -1,93 +1,21 @@
-:root {
-  --white: #ffffff;
-  --gray-light: #b2b2b2;
-  --gray: #666666;
-  --black: #121212;
+function enterSite() {
+  const intro = document.getElementById('intro');
+  const main = document.getElementById('main');
+
+  intro.style.opacity = '0';
+  setTimeout(() => {
+    intro.style.display = 'none';
+    main.style.display = 'block';
+    showPage('top'); // TOP으로 초기 전환
+  }, 500);
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: var(--black);
-  color: var(--white);
-}
+function showPage(pageId) {
+  const sections = document.querySelectorAll('.page');
+  sections.forEach((section) => (section.style.display = 'none'));
 
-/* Intro Page */
-#intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--black);
-  cursor: pointer;
-  transition: opacity 0.5s;
-}
-
-#intro h1 {
-  font-size: 3rem;
-  color: var(--gray-light);
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: var(--black);
-  border-bottom: 1px solid var(--gray);
-}
-
-.nav-left, .nav-right {
-  display: flex;
-  gap: 2rem;
-}
-
-a {
-  color: var(--gray-light);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  color: var(--white);
-}
-
-/* Main Grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.product-card {
-  background-color: var(--gray);
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-  font-size: 1.5rem;
-}
-/* 추가 - Intro 배경 하얗게 */
-#intro {
-  background-color: var(--white);
-  color: var(--black);
-}
-
-/* 페이지 전환용 공통 섹션 */
-.page {
-  padding: 2rem;
-}
-
-/* 임시 페이지 디자인 */
-.placeholder {
-  height: 400px;
-  background-color: var(--gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 2rem;
+  const target = document.getElementById(pageId);
+  if (target) {
+    target.style.display = 'block';
+  }
 }
