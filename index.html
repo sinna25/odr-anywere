@@ -7,9 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Intro Page -->
+  <!-- Intro Page (Video Background) -->
   <div id="intro" onclick="enterSite()">
-    <img src="logo-intro.png" alt="odr intro logo" class="intro-logo" />
+    <video autoplay muted loop id="introVideo">
+      <source src="logo animation.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
 
   <!-- Main -->
@@ -19,7 +22,7 @@
         <a href="#" onclick="showPage('top')">TOP</a>
         <a href="#" onclick="showPage('about')">ABOUT</a>
       </nav>
-      <img src="logo-main.png" alt="odr logo" class="logo-center" />
+      <img src="logo-main.png" alt="odr logo" class="logo-center" onclick="showPage('top')" />
       <nav class="nav-right">
         <a href="#" onclick="showPage('account')">ACCOUNT</a>
         <a href="#" onclick="showPage('cart')">CART</a>
@@ -48,7 +51,7 @@
     <!-- ABOUT -->
     <section id="about" class="page" style="display: none;">
       <div class="about-hero">
-        <img src="about-hero.jpg" alt="about hero" />
+        <img src="about-hero.jpg" alt="about hero" class="banner-image" />
       </div>
       <div class="about-content">
         <h3>CONCEPT</h3>
