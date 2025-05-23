@@ -80,21 +80,17 @@ header {
 }
 
 .product-card {
-  overflow: hidden;
-  clip-path: ellipse(45% 48% at 50% 50%);
   height: 280px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: scale(1.02);
+  clip-path: ellipse(40% 48% at 50% 50%);
+  transform: skewX(-23.5deg);
+  overflow: hidden;
 }
 
 .product-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: skewX(23.5deg);
   display: block;
 }
 
@@ -110,33 +106,36 @@ header {
   padding: 3rem 2rem;
 }
 
-.about-content h3 {
-  color: #666666;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  opacity: 0;
-}
-
-.about-logo {
-  height: 40px;
-  margin: 2rem 0;
-  opacity: 0;
-}
-
+.about-content h3,
+.about-content .about-logo,
 .about-content .ko,
 .about-content .en {
-  font-size: 16px;
-  line-height: 2;
   opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.about-content h3 {
+  animation-delay: 0s;
+}
+
+.about-content .about-logo {
+  animation-delay: 1s;
 }
 
 .about-content .ko {
-  color: #000000;
-  margin-bottom: 2rem;
+  animation-delay: 2s;
 }
 
 .about-content .en {
-  color: #b2b2b2;
+  animation-delay: 3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Account */
@@ -190,6 +189,23 @@ header {
 .cart-box {
   text-align: center;
   padding: 4rem 2rem;
+}
+
+.cart-item {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-item img {
+  width: 100px;
+  vertical-align: middle;
+}
+
+.cart-item span {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 16px;
+  vertical-align: middle;
 }
 
 .cart-box button {
@@ -249,12 +265,12 @@ header {
   padding: 0.5rem 1rem;
   margin: 0.5rem;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.sizes span.selected {
+.sizes span.active {
   background-color: #121212;
-  color: #fff;
-  border-color: #121212;
+  color: white;
 }
 
 #add-to-cart {
