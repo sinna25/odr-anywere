@@ -120,14 +120,23 @@ header {
 }
 
 .about-content .about-logo {
+  height: 40px;
+  margin: 2rem 0;
   animation-delay: 1s;
 }
 
 .about-content .ko {
+  color: #000000;
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 2rem;
   animation-delay: 2s;
 }
 
 .about-content .en {
+  color: #b2b2b2;
+  font-size: 16px;
+  line-height: 2;
   animation-delay: 3s;
 }
 
