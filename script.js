@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("introVideo");
   let hasPlayed = false;
 
-  // 인트로 영상 클릭 시 소리 재생 + 자동 전환
   video.addEventListener("click", () => {
     if (!hasPlayed) {
       video.muted = false;
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 영상 종료 후 TOP으로 자동 전환 (디졸브)
   video.addEventListener("ended", () => {
     intro.style.opacity = "0";
     setTimeout(() => {
@@ -24,19 +22,29 @@ document.addEventListener("DOMContentLoaded", function () {
         main.style.opacity = "1";
         showPage("top");
       }, 50);
-    }, 1000); // 디졸브 시간 1초
+    }, 1000);
   });
 
-  // 페이지 전환 함수
   window.showPage = function (pageId) {
     const sections = document.querySelectorAll(".page");
     sections.forEach((section) => {
-      section.style.display = "none";
+      section.classList.remove("active");
     });
     const target = document.getElementById(pageId);
     if (target) {
-      target.style.display = "block";
+      target.classList.add("active");
       window.scrollTo(0, 0);
     }
   };
+
+  window.showDetail = function (index) {
+    const detailImage = document.getElementById("detail-image");
+    const detailName = document.getElementById("detail-name");
+    const detailPrice = document.getElementById("detail-price");
+
+    detailImage.src = `product${index}.jpeg`;
+    detailName.textContent = `Product ${index}`;
+    detailPrice.textContent = `₩195,000`;
+    showPage("product-detail");
+  }
 });
