@@ -8,7 +8,7 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 </head>
 <body>
-  <!-- SVG clipPath 정의: shear된 타원 -->
+  <!-- SVG clipPath 정의 -->
   <svg width="0" height="0">
     <defs>
       <clipPath id="clip-product" clipPathUnits="objectBoundingBox">
@@ -41,44 +41,53 @@
       </nav>
     </header>
 
-    <!-- TOP -->
-    <section id="top" class="page">
-      <div class="banner">
-        <img src="banner.jpg" alt="banner" class="banner-image">
-      </div>
-      <div class="product-grid">
-        <svg class="product-card" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
-          <image href="1_수상가옥_로고합성.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_영국_로고합성.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_우유니_로고합성.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_이탈리아_로고합성.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_일본_로고합성.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_제주_로고합성.jpg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_파리_로고합성.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_페루_로고합성.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_플로리다_로고합성.jpg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-        <svg class="product-card" viewBox="0 0 1 1">
-          <image href="1_하와이_로고합성.jpg" width="1" height="1" clip-path="url(#clip-product)"/>
-        </svg>
-      </div>
-    </section>
+<section id="top" class="page">
+  <div class="banner">
+    <img src="banner.jpg" alt="banner" class="banner-image">
+  </div>
+
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="clip-product" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0 C0.75,0,1,0.25,1,0.5 C1,0.75,0.75,1,0.5,1 C0.25,1,0,0.75,0,0.5 C0,0.25,0.25,0,0.5,0 Z"
+              transform="matrix(1,0,0.25,1,0,0)" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <div class="product-grid">
+    <svg class="product-card" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
+      <image href="product_01.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_02.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_03.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_04.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_05.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_06.jpg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_07.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_08.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_09.jpg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+    <svg class="product-card" viewBox="0 0 1 1">
+      <image href="product_10.jpg" width="1" height="1" clip-path="url(#clip-product)"/>
+    </svg>
+  </div>
+</section>
 
     <!-- ABOUT -->
     <section id="about" class="page">
