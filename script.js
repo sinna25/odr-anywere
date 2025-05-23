@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("introVideo");
 
   if (video) {
-    // 클릭 시 사운드 재생 허용 + 영상 시작
+    // 영상 클릭 시 사운드 켜고 재생
     video.addEventListener("click", function () {
       video.muted = false;
       video.play();
     });
 
-    // 영상 끝나면 사이트 전환 실행
+    // 영상 종료 후 페이지 전환
     video.addEventListener("ended", function () {
       enterSite();
     });
@@ -19,18 +19,15 @@ function enterSite() {
   const intro = document.getElementById("intro");
   const main = document.getElementById("main");
 
-  // 디졸브 시작
   intro.style.opacity = "0";
   setTimeout(() => {
     intro.style.display = "none";
     main.style.display = "block";
-
-    // 메인 페이지도 부드럽게 나타남
     setTimeout(() => {
       main.style.opacity = "1";
       showPage("top");
     }, 50);
-  }, 1000); // 1초 디졸브 후 전환
+  }, 1000); // 디졸브 1초 후 전환
 }
 
 function showPage(pageId) {
