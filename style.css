@@ -8,7 +8,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Pretendard Variable', sans-serif;
   background-color: var(--white);
   color: var(--black);
   cursor: url('cursor.cur'), auto;
@@ -91,6 +91,14 @@ header {
   max-width: 300px;
   height: auto;
   display: block;
+  -webkit-mask-image: url('frame_product.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-image: url('frame_product.png');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
 }
 
 /* ABOUT Page */
@@ -111,14 +119,20 @@ header {
   letter-spacing: 0.2em;
   color: var(--gray);
 }
-.about-content h1 {
-  font-size: 2.5rem;
-  margin: 1rem 0;
-}
-.about-content p {
-  font-size: 1rem;
+.about-content .ko {
+  color: var(--black);
+  margin-top: 2rem;
   line-height: 1.8;
-  color: var(--gray);
+}
+.about-content .en {
+  color: var(--gray-light);
+  margin-top: 2rem;
+  line-height: 1.8;
+}
+.about-logo {
+  max-width: 320px;
+  margin: 1.5rem auto;
+  display: block;
 }
 
 /* ACCOUNT Page */
