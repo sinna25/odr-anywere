@@ -34,11 +34,10 @@
       <div class="banner">
         <img src="banner.jpg" alt="banner" class="banner-image">
       </div>
-
       <svg width="0" height="0">
         <defs>
           <clipPath id="clip-product" clipPathUnits="objectBoundingBox">
-            <path d="M0.0416,0.5C0.0416,0.2545,0.2485,0.0417,0.4989,0.0417c0.2504,0,0.4595,0.2128,0.4595,0.4583c0,0.2455-0.2091,0.4583-0.4595,0.4583C0.2485,0.9583,0.0416,0.7455,0.0416,0.5z"/>
+            <path d="M0.5,0 C0.8,0,1,0.25,1,0.5 C1,0.75,0.8,1,0.5,1 C0.2,1,0,0.75,0,0.5 C0,0.25,0.2,0,0.5,0 Z" transform="matrix(1,0,0.45,1,0,0)"/>
           </clipPath>
         </defs>
       </svg>
@@ -62,10 +61,10 @@
         <img src="about-hero.jpg" alt="about hero" class="banner-image">
       </div>
       <div class="about-content">
-        <h3>CONCEPT</h3>
-        <img src="logo-intro.png" alt="LEAP GRAVITY logo" class="about-logo">
-        <p class="ko">ODR*는 “좋은 신발은 좋은 곳으로 데려다준다”는 믿음 아래,<br>로컬의 특색을 현대적인 감각으로 재해석한 리미티드 슈즈 컬렉션을 선보입니다.<br>신발은 단순한 소비를 넘어, 공간과 경험을 걷는 방식으로 확장됩니다.</p>
-        <p class="en">ODR* is founded on the belief that good shoes take you good places.<br>We present limited-edition footwear inspired by local identity, reimagined through a modern lens.<br>Each pair moves beyond product—becoming a way to walk through space and story.</p>
+        <h3 class="fade-in">CONCEPT</h3>
+        <img src="logo-intro.png" alt="LEAP GRAVITY logo" class="about-logo fade-in">
+        <p class="ko fade-in">ODR*는 “좋은 신발은 좋은 곳으로 데려다준다”는 믿음 아래,<br>로컬의 특색을 현대적인 감각으로 재해석한 리미티드 슈즈 컬렉션을 선보입니다.<br>신발은 단순한 소비를 넘어, 공간과 경험을 걷는 방식으로 확장됩니다.</p>
+        <p class="en fade-in">ODR* is founded on the belief that good shoes take you good places.<br>We present limited-edition footwear inspired by local identity, reimagined through a modern lens.<br>Each pair moves beyond product—becoming a way to walk through space and story.</p>
       </div>
     </section>
 
@@ -73,20 +72,23 @@
       <div class="login-box">
         <h2>LOGIN</h2>
         <p>Enter your ID and password to login:</p>
-        <input type="text" placeholder="ID">
+        <input type="text" id="login-id" placeholder="ID">
         <div class="password-wrap">
-          <input type="password" placeholder="Password">
+          <input type="password" id="login-pw" placeholder="Password">
           <a href="#">Forgot your password?</a>
         </div>
-        <button>LOGIN</button>
+        <button onclick="handleLogin()">LOGIN</button>
         <p class="signup">Don't have an account?<br><a href="#">Sign up</a></p>
+        <p id="login-result"></p>
       </div>
     </section>
 
     <section id="cart" class="page">
       <div class="cart-box">
         <h2>CART</h2>
-        <p>Your cart is empty</p>
+        <div id="cart-items">
+          <p>Your cart is empty</p>
+        </div>
         <button onclick="showPage('top')">SHOP OUR PRODUCTS</button>
       </div>
     </section>
@@ -99,10 +101,10 @@
         <div class="product-detail-right">
           <h2 id="detail-name">Product Name</h2>
           <p id="detail-price">₩000,000</p>
-          <div class="sizes">
-            <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+          <div class="sizes" id="size-options">
+            <span onclick="selectSize(this)">22</span><span onclick="selectSize(this)">23</span><span onclick="selectSize(this)">24</span><span onclick="selectSize(this)">25</span><span onclick="selectSize(this)">26</span>
           </div>
-          <button id="add-to-cart">ADD TO CART</button>
+          <button id="add-to-cart" onclick="addToCart()">ADD TO CART</button>
         </div>
       </div>
     </section>
