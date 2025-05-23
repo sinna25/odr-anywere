@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("introVideo");
   let hasPlayed = false;
 
-  // 인트로 영상 클릭 시 사운드 활성화
   video.addEventListener("click", () => {
     if (!hasPlayed) {
       video.muted = false;
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 영상 종료 시 디졸브 후 메인 페이지 활성화
   video.addEventListener("ended", () => {
     intro.style.opacity = "0";
     setTimeout(() => {
@@ -27,28 +25,56 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   });
 
-  // 페이지 전환
   window.showPage = function (pageId) {
     const sections = document.querySelectorAll(".page");
-    sections.forEach((section) => {
-      section.classList.remove("active");
-    });
+    sections.forEach((section) => section.classList.remove("active"));
     const target = document.getElementById(pageId);
     if (target) {
       target.classList.add("active");
       window.scrollTo(0, 0);
+      if (pageId === "about") {
+        const aboutEls = document.querySelectorAll("#about .about-content > *");
+        aboutEls.forEach((el, i) => {
+          el.style.opacity = 0;
+          el.style.transition = "opacity 0.5s ease";
+          setTimeout(() => (el.style.opacity = 1), i * 300);
+        });
+      }
     }
   };
 
-  // 상세 페이지 전환
   window.showDetail = function (index) {
-    const detailImage = document.getElementById("detail-image");
-    const detailName = document.getElementById("detail-name");
-    const detailPrice = document.getElementById("detail-price");
-
-    detailImage.src = `product${index}.jpeg`;
-    detailName.textContent = `Product ${index}`;
-    detailPrice.textContent = `₩195,000`;
+    document.getElementById("detail-image").src = `product${index}.jpeg`;
+    document.getElementById("detail-name").textContent = `Product ${index}`;
+    document.getElementById("detail-price").textContent = `₩195,000`;
+    document.querySelectorAll(".sizes span").forEach(span => span.classList.remove("selected"));
     showPage("product-detail");
   };
+
+  document.querySelectorAll(".sizes span").forEach(span => {
+    span.addEventListener("click", () => {
+      document.querySelectorAll(".sizes span").forEach(s => s.classList.remove("selected"));
+      span.classList.add("selected");
+    });
+  });
+
+  document.getElementById("add-to-cart").addEventListener("click", () => {
+    const selectedSize = document.querySelector(".sizes span.selected");
+    if (!selectedSize) {
+      alert("Please select a size first.");
+    } else {
+      alert(`Added to cart: ${document.getElementById("detail-name").textContent}, Size ${selectedSize.textContent}`);
+    }
+  });
+
+  const loginBtn = document.querySelector(".login-box button");
+  loginBtn.addEventListener("click", () => {
+    const id = document.querySelector("input[type='text']").value;
+    const pw = document.querySelector("input[type='password']").value;
+    if (id && pw) {
+      document.querySelector(".login-box").innerHTML = `<h2>Hello, ${id}!</h2>`;
+    } else {
+      alert("Please enter both ID and password");
+    }
+  });
 });
