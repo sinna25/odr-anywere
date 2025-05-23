@@ -9,25 +9,28 @@
 <body>
   <!-- Intro Page -->
   <div id="intro" onclick="enterSite()">
-    <h1>odr*anywhere</h1>
+    <img src="logo-intro.png" alt="odr intro logo" class="intro-logo" />
   </div>
 
   <!-- Main -->
   <div id="main" style="display: none">
     <header>
-      <div class="nav-left">
+      <nav class="nav-left">
         <a href="#" onclick="showPage('top')">TOP</a>
         <a href="#" onclick="showPage('about')">ABOUT</a>
-      </div>
-      <div class="nav-right">
+      </nav>
+      <img src="logo-main.png" alt="odr logo" class="logo-center" />
+      <nav class="nav-right">
         <a href="#" onclick="showPage('account')">ACCOUNT</a>
         <a href="#" onclick="showPage('cart')">CART</a>
-      </div>
+      </nav>
     </header>
 
     <!-- TOP -->
     <section id="top" class="page">
-      <div class="banner">[배너 이미지 자리]</div>
+      <div class="banner">
+        <img src="banner.jpg" alt="banner" class="banner-image" />
+      </div>
       <div class="product-grid">
         <div class="product-card">Product 1</div>
         <div class="product-card">Product 2</div>
@@ -44,7 +47,25 @@
 
     <!-- ABOUT -->
     <section id="about" class="page" style="display: none;">
-      <div class="placeholder">ABOUT PAGE</div>
+      <div class="about-hero">
+        <img src="about-hero.jpg" alt="about hero" />
+      </div>
+      <div class="about-content">
+        <h3>CONCEPT</h3>
+        <h1>LEAP GRAVITY</h1>
+        <p>
+          Through shoes, we will bring about a new way of communication with the earth.<br><br>
+          Through shoes, we will make people more aware of the time-gravity link and<br>
+          make them dream of their connection to higher dimensions.<br><br>
+          By making a shoe where the sole-itself is connected to the earth,<br>
+          with a shape fit for going for a stroll, the burden of walking is lifted.<br>
+          The transparent soles of the shoes will have you feeling as if you are walking on air.<br>
+          With a shape that delivers a punch, feel your consciousness flow<br>
+          through the soles of your shoes.<br><br>
+          Pursuing weightlessness and losing consciousness of what's on your feet is not a thing of the future.<br>
+          By utilizing shape, we want to evolve the consciousness of humans and gravity through comfort.
+        </p>
+      </div>
     </section>
 
     <!-- ACCOUNT -->
