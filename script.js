@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     video.addEventListener("click", function () {
       video.muted = false;
       video.play();
+    });
+
+    video.addEventListener("ended", function () {
       enterSite();
     });
   }
