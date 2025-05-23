@@ -14,7 +14,6 @@ body, html {
   cursor: url('cursor.cur'), auto;
 }
 
-/* Intro video */
 #intro {
   background-color: #000000;
   width: 100vw;
@@ -36,12 +35,10 @@ body, html {
   cursor: pointer;
 }
 
-/* Main page fade-in */
 #main {
   transition: opacity 1s ease;
 }
 
-/* Header with Center Logo */
 header {
   display: flex;
   justify-content: space-between;
@@ -61,7 +58,6 @@ header {
   cursor: pointer;
 }
 
-/* Banner */
 .banner {
   width: 100%;
 }
@@ -73,7 +69,6 @@ header {
   object-fit: cover;
 }
 
-/* Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -101,7 +96,6 @@ header {
   mask-position: center;
 }
 
-/* ABOUT Page */
 .about-hero img {
   width: 100%;
   height: auto;
@@ -135,7 +129,6 @@ header {
   display: block;
 }
 
-/* ACCOUNT Page */
 .login-box {
   max-width: 400px;
   margin: 3rem auto;
@@ -170,7 +163,6 @@ header {
   margin-top: 1rem;
 }
 
-/* CART Page */
 .cart-box {
   text-align: center;
   padding: 4rem 2rem;
@@ -183,7 +175,6 @@ header {
   border: none;
 }
 
-/* Page Container */
 .page {
   display: none;
 }
