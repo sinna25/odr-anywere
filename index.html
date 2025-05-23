@@ -8,11 +8,11 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 </head>
 <body>
-  <!-- SVG clipPath 정의 -->
+  <!-- SVG clipPath 정의: Illustrator형 비정형 타원 -->
   <svg width="0" height="0">
     <defs>
       <clipPath id="clip-product" clipPathUnits="objectBoundingBox">
-        <path d="M0.5,0 C0.75,0,1,0.25,1,0.5 C1,0.75,0.75,1,0.5,1 C0.25,1,0,0.75,0,0.5 C0,0.25,0.25,0,0.5,0 Z" transform="matrix(1,0,0.25,1,0,0)"/>
+        <path d="M0.0416,0.5C0.1517,0.1385,0.4475,0,0.7026,0s0.3709,0.1385,0.2608,0.5c-0.1101,0.3615-0.4059,0.5-0.661,0.5S-0.0685,0.8615,0.0416,0.5Z"/>
       </clipPath>
     </defs>
   </svg>
@@ -41,55 +41,44 @@
       </nav>
     </header>
 
-<!-- TOP -->
-<section id="top" class="page">
-  <div class="banner">
-    <img src="banner.jpg" alt="banner" class="banner-image">
-  </div>
-
-  <!-- 클리핑 마스크 정의 (최신 Illustrator 기반 Path) -->
-  <svg width="0" height="0">
-    <defs>
-      <clipPath id="clip-product" clipPathUnits="objectBoundingBox">
-        <!-- Illustrator 기반 경로를 objectBoundingBox에 맞춰 스케일링 필요 시 여기 보정 가능 -->
-        <path d="M0.0416,0.5C0.1517,0.2238,0.4475,0,0.7022,0S1.0,0.2238,0.8898,0.5c-0.1102,0.2762-0.4060,0.5-0.6606,0.5S-0.0685,0.7762,0.0416,0.5Z"/>
-      </clipPath>
-    </defs>
-  </svg>
-
-  <div class="product-grid">
-    <svg class="product-card" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
-      <image href="product1.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product2.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product3.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product4.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product5.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product6.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product7.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product8.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product9.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-    <svg class="product-card" viewBox="0 0 1 1">
-      <image href="product10.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
-    </svg>
-  </div>
-</section>
+    <!-- TOP -->
+    <section id="top" class="page">
+      <div class="banner">
+        <img src="banner.jpg" alt="banner" class="banner-image">
+      </div>
+      <div class="product-grid">
+        <svg class="product-card" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
+          <image href="product1.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product2.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product3.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product4.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product5.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product6.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product7.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product8.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product9.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+        <svg class="product-card" viewBox="0 0 1 1">
+          <image href="product10.jpeg" width="1" height="1" clip-path="url(#clip-product)"/>
+        </svg>
+      </div>
+    </section>
 
     <!-- ABOUT -->
     <section id="about" class="page">
