@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>odr*anywere</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Intro Page -->
   <div id="intro" onclick="enterSite()">
-    <h1>ENTER odr*anywere</h1>
+    <h1>odr*anywhere</h1>
   </div>
 
   <!-- Main Content -->
   <div id="main" style="display: none">
     <header>
       <div class="nav-left">
-        <a href="#">TOP</a>
-        <a href="#">ABOUT</a>
+        <a href="#top">TOP</a>
+        <a href="#about" onclick="showPage('about')">ABOUT</a>
       </div>
       <div class="nav-right">
-        <a href="#">ACCOUNT</a>
-        <a href="#">CART</a>
+        <a href="#account" onclick="showPage('account')">ACCOUNT</a>
+        <a href="#cart" onclick="showPage('cart')">CART</a>
       </div>
     </header>
 
-    <section class="product-grid">
-      <div class="product-card">Product 1</div>
-      <div class="product-card">Product 2</div>
-      <div class="product-card">Product 3</div>
-      <div class="product-card">Product 4</div>
+    <section id="home" class="page">
+      <div class="product-grid">
+        <div class="product-card">Product 1</div>
+        <div class="product-card">Product 2</div>
+        <div class="product-card">Product 3</div>
+        <div class="product-card">Product 4</div>
+      </div>
+    </section>
+
+    <section id="about" class="page" style="display:none">
+      <div class="placeholder">ABOUT PAGE</div>
+    </section>
+    <section id="account" class="page" style="display:none">
+      <div class="placeholder">ACCOUNT PAGE</div>
+    </section>
+    <section id="cart" class="page" style="display:none">
+      <div class="placeholder">CART PAGE</div>
     </section>
   </div>
 
-<script src="script.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
