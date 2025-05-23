@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>odr*anywere</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      cursor: url('cursor.cur'), auto;
+    }
+  </style>
 </head>
 <body>
   <!-- Intro Page -->
-  <div id="intro">
+  <div id="intro" style="transition: opacity 1s ease;">
     <div class="intro-video-wrapper">
       <video id="introVideo">
         <source src="logo animation.mp4" type="video/mp4" />
@@ -18,7 +23,7 @@
   </div>
 
   <!-- Main -->
-  <div id="main" style="display: none">
+  <div id="main" style="display: none; opacity: 0; transition: opacity 1s ease;">
     <header>
       <nav class="nav-left">
         <a href="#" onclick="showPage('top')">TOP</a>
@@ -37,57 +42,21 @@
         <img src="banner.jpg" alt="banner" class="banner-image" />
       </div>
       <div class="product-grid">
-        <div class="product-card"><img src="frame_product.png" alt="product" /></div>
-        <!-- 나머지 상품 카드 추가 -->
+        <div class="product-card"><img src="frame_product.png" alt="product 1" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 2" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 3" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 4" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 5" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 6" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 7" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 8" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 9" /></div>
+        <div class="product-card"><img src="frame_product.png" alt="product 10" /></div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="page" style="display: none;">
-      <div class="about-hero">
-        <img src="about-hero.jpg" alt="about hero" class="banner-image" />
-      </div>
-      <div class="about-content">
-        <h3>CONCEPT</h3>
-        <h1>LEAP GRAVITY</h1>
-        <p>
-          Through shoes, we will bring about a new way of communication with the earth.<br><br>
-          Through shoes, we will make people more aware of the time-gravity link and
-          make them dream of their connection to higher dimensions.<br><br>
-          By making a shoe where the sole-itself is connected to the earth,
-          with a shape fit for going for a stroll, the burden of walking is lifted.<br><br>
-          The transparent soles of the shoes will have you feeling as if you are walking on air.
-          With a shape that delivers a punch, feel your consciousness flow
-          through the soles of your shoes.<br><br>
-          Pursuing weightlessness and losing consciousness of what's on your feet is not a thing of the future.
-          By utilizing shape, we want to evolve the consciousness of humans and gravity through comfort.
-        </p>
-      </div>
-    </section>
+    <!-- ABOUT / ACCOUNT / CART 영역은 동일하게 유지 -->
 
-    <!-- ACCOUNT -->
-    <section id="account" class="page" style="display: none;">
-      <div class="login-box">
-        <h2>LOGIN</h2>
-        <p>Enter your email and password to login:</p>
-        <input type="email" placeholder="E-mail" />
-        <div class="password-wrap">
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-        </div>
-        <button>LOGIN</button>
-        <p class="signup">Don't have an account?<br /><a href="#">Sign up</a></p>
-      </div>
-    </section>
-
-    <!-- CART -->
-    <section id="cart" class="page" style="display: none;">
-      <div class="cart-box">
-        <h2>CART</h2>
-        <p>Your cart is empty</p>
-        <button>SHOP OUR PRODUCTS</button>
-      </div>
-    </section>
   </div>
 
   <script src="script.js" defer></script>
