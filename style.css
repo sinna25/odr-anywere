@@ -80,9 +80,9 @@ header {
 }
 
 .product-card {
-  aspect-ratio: 1 / 1;
   overflow: hidden;
-  clip-path: url(#clip-product);
+  clip-path: ellipse(45% 48% at 50% 50%);
+  height: 280px;
 }
 
 .product-card img {
