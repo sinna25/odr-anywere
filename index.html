@@ -8,6 +8,16 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 </head>
 <body>
+  <!-- SVG clipPath 정의: shear된 타원 -->
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="clip-product" clipPathUnits="objectBoundingBox">
+        <!-- 원을 x축으로 shear하여 타원형 형태로 만든 경로 -->
+        <path d="M0.5,0 C0.75,0,1,0.25,1,0.5 C1,0.75,0.75,1,0.5,1 C0.25,1,0,0.75,0,0.5 C0,0.25,0.25,0,0.5,0 Z" transform="matrix(1,0,0.25,1,0,0)"/>
+      </clipPath>
+    </defs>
+  </svg>
+
   <!-- Intro Page -->
   <div id="intro">
     <div class="intro-video-wrapper">
