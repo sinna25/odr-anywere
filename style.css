@@ -82,18 +82,19 @@ header {
 
 .product-card {
   width: 100%;
-  aspect-ratio: 1 / 1.2; /* 타원 세로 비례 유지 */
+  aspect-ratio: 1 / 1.2;
   position: relative;
   clip-path: ellipse(42% 50% at 50% 50%);
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  transform: rotate(-23.5deg); /* 타원 기울기 */
 }
 
 .product-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: rotate(23.5deg); /* 이미지 보정 */
   display: block;
-  border-radius: 0; /* 타원 효과만 적용되도록 */
 }
 
 /* 타원 클리핑 보정 - 작은 화면에서 유지 */
