@@ -93,7 +93,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: rotate(23.5deg); /* 이미지 보정 */
+  transform: rotate(-23.5deg); /* 이미지 보정 */
   display: block;
 }
 
