@@ -26,7 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         main.style.opacity = "1";
         showPage("top");
-      }, 50);
+
+        // ✅ 상품 디졸브 애니메이션 실행
+        const productCards = document.querySelectorAll(".product-card");
+        productCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("fade-in-product");
+          }, index * 100); // 순차적으로 0.1초 간격
+        });
+      }, 100);
     }, 1000);
   });
 
@@ -87,9 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   };
 
-  // ✅ 장바구니 업데이트 함수 (기존 문구 제거 포함)
+  // ✅ 장바구니 업데이트 함수
   function updateCart() {
-    cartItemsContainer.innerHTML = ""; // 기존 내용 초기화
+    cartItemsContainer.innerHTML = "";
 
     cartItems.forEach(item => {
       const div = document.createElement("div");
@@ -104,9 +112,12 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
       cartItemsContainer.appendChild(div);
     });
+
+    const emptyMsg = document.getElementById("cart-empty");
+    if (emptyMsg) emptyMsg.style.display = cartItems.length ? "none" : "block";
   }
 
-  // ✅ 로그인 기능
+  // ✅ 로그인 기능 구현
   const loginBtn = document.querySelector(".login-box button");
   loginBtn.addEventListener("click", () => {
     const id = document.getElementById("login-id").value;
@@ -118,22 +129,22 @@ document.addEventListener("DOMContentLoaded", function () {
       const loginUser = document.getElementById("login-user");
       const navRight = document.querySelector(".nav-right");
 
-      // ✅ 로그인 박스 숨기기
+      // ✅ 입력창 숨기기
       loginBox.querySelectorAll("input, .password-wrap, button, .signup").forEach(el => el.style.display = "none");
 
-      // ✅ 팝업 메시지 표시
+      // ✅ 팝업 표시
       loginUser.textContent = id;
       loginPopup.style.display = "block";
       setTimeout(() => {
         loginPopup.style.opacity = 1;
       }, 100);
 
-      // ✅ 팝업 2초 후 사라짐 + LOGOUT 버튼 등장
+      // ✅ 2초 후 팝업 사라지고 로그아웃 버튼 생성
       setTimeout(() => {
         loginPopup.style.opacity = 0;
         setTimeout(() => {
           loginPopup.style.display = "none";
-          // ✅ LOGOUT 버튼 생성
+
           const logoutBtn = document.createElement("button");
           logoutBtn.id = "logout-button";
           logoutBtn.textContent = "LOGOUT";
@@ -142,7 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
           logoutBtn.addEventListener("click", () => {
             logoutBtn.remove();
             loginBox.querySelectorAll("input, .password-wrap, button, .signup").forEach(el => el.style.display = "");
-            loginUser.textContent = "";
             loginPopup.style.display = "none";
           });
         }, 300);
@@ -164,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ✅ MYSHOPPING 페이지 표시
+  // ✅ MYSHOPPING 페이지 생성 및 이동
   function showMyShopping() {
     let shoppingSection = document.getElementById("myshopping");
     if (!shoppingSection) {
