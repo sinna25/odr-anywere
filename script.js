@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartItemsContainer = document.getElementById("cart-items");
   let cartItems = [];
 
-  // ✅ 인트로 영상 디졸브 전환
+  // ✅ 인트로 영상 디조르브 전환
   video.addEventListener("click", () => {
     if (!hasPlayed) {
       video.muted = false;
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         main.style.opacity = "1";
         showPage("top");
 
-        // ✅ 상품 디졸브 애니메이션 실행
+        // ✅ 상품 디조르브 애니메이션 시킵
         const productCards = document.querySelectorAll(".product-card");
         productCards.forEach((card, index) => {
           setTimeout(() => {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // ✅ 장바구니 담기 기능
+    // ✅ 장바구니 달긴 기능
     const addToCartBtn = document.getElementById("add-to-cart");
     addToCartBtn.onclick = () => {
       const selectedSize = document.querySelector(".sizes span.active");
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       cartItems.push(product);
       updateCart();
-      alert("장바구니에 당겨요.");
+      alert("장바구니에 달긴 상품이 추가되었습니다.");
     };
   };
 
