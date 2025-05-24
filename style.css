@@ -80,13 +80,14 @@ header {
   justify-items: center;
 }
 
+/* ✅ 타원형 카드 마스킹 + 비율 유지 + 기울기 효과 */
 .product-card {
   width: 100%;
   aspect-ratio: 1 / 1.2;
   position: relative;
   clip-path: ellipse(42% 50% at 50% 50%);
   overflow: hidden;
-  transform: rotate(23.5deg); /* 타원 기울기 */
+  transform: rotate(23.5deg); /* 타원 기울이기 */
 }
 
 .product-card img {
@@ -97,7 +98,7 @@ header {
   display: block;
 }
 
-/* 타원 클리핑 보정 - 작은 화면에서 유지 */
+/* ✅ 작은 화면에서도 타원 형태와 비율 유지 */
 @media (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -209,6 +210,17 @@ header {
   text-decoration: none;
 }
 
+/* ✅ 로그인 성공 팝업 스타일 */
+#login-popup {
+  opacity: 0;
+  background-color: #121212;
+  color: white;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  transition: opacity 1s ease;
+}
+
 /* Cart */
 .cart-box {
   text-align: center;
@@ -216,20 +228,38 @@ header {
 }
 
 .cart-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
   padding: 1rem;
   border-bottom: 1px solid #ccc;
 }
 
 .cart-item img {
-  width: 100px;
-  vertical-align: middle;
+  width: 80px;
+  height: auto;
 }
 
-.cart-item span {
-  display: inline-block;
-  margin-left: 1rem;
+.cart-item .cart-info {
+  text-align: left;
+}
+
+.cart-item .cart-name {
+  font-weight: bold;
   font-size: 16px;
-  vertical-align: middle;
+}
+
+.cart-item .cart-size {
+  font-size: 14px;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.cart-item .cart-price {
+  font-size: 16px;
+  color: #000;
+  margin-top: 0.5rem;
 }
 
 .cart-box button {
