@@ -106,25 +106,104 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ✅ 로그인 기능 (Hello, ID! 팝업)
+  // ✅ 로그인 기능
   const loginBtn = document.querySelector(".login-box button");
   loginBtn.addEventListener("click", () => {
     const id = document.getElementById("login-id").value;
     const pw = document.getElementById("login-pw").value;
 
     if (id && pw) {
-      // ✅ 로그인 박스에 팝업 추가
-      const popup = document.createElement("div");
-      popup.id = "login-popup";
-      popup.textContent = `Hello, ${id}!`;
-      document.querySelector(".login-box").appendChild(popup);
+      const loginBox = document.querySelector(".login-box");
+      const loginPopup = document.getElementById("login-popup");
+      const loginUser = document.getElementById("login-user");
+      const navRight = document.querySelector(".nav-right");
 
-      // ✅ 디졸브 효과
+      // ✅ 로그인 박스 숨기기
+      loginBox.querySelectorAll("input, .password-wrap, button, .signup").forEach(el => el.style.display = "none");
+
+      // ✅ 팝업 메시지 표시
+      loginUser.textContent = id;
+      loginPopup.style.display = "block";
       setTimeout(() => {
-        popup.style.opacity = 1;
+        loginPopup.style.opacity = 1;
       }, 100);
+
+      // ✅ 팝업 2초 후 사라짐 + LOGOUT 버튼 등장
+      setTimeout(() => {
+        loginPopup.style.opacity = 0;
+        setTimeout(() => {
+          loginPopup.style.display = "none";
+          // ✅ LOGOUT 버튼 생성
+          const logoutBtn = document.createElement("button");
+          logoutBtn.id = "logout-button";
+          logoutBtn.textContent = "LOGOUT";
+          loginBox.appendChild(logoutBtn);
+
+          logoutBtn.addEventListener("click", () => {
+            logoutBtn.remove();
+            loginBox.querySelectorAll("input, .password-wrap, button, .signup").forEach(el => el.style.display = "");
+            loginUser.textContent = "";
+            loginPopup.style.display = "none";
+          });
+        }, 300);
+      }, 2000);
+
+      // ✅ MYSHOPPING 메뉴 추가
+      if (!document.getElementById("myshopping-link")) {
+        const myshop = document.createElement("a");
+        myshop.href = "#";
+        myshop.id = "myshopping-link";
+        myshop.textContent = "MYSHOPPING";
+        myshop.onclick = () => {
+          showMyShopping();
+        };
+        navRight.appendChild(myshop);
+      }
     } else {
       alert("아이디와 비밀번호를 입력해주세요.");
     }
   });
+
+  // ✅ MYSHOPPING 페이지 표시
+  function showMyShopping() {
+    let shoppingSection = document.getElementById("myshopping");
+    if (!shoppingSection) {
+      shoppingSection = document.createElement("section");
+      shoppingSection.id = "myshopping";
+      shoppingSection.className = "page";
+      shoppingSection.innerHTML = `
+        <div class="myshopping-box">
+          <h2>MY SHOPPING</h2>
+          <table class="shopping-status">
+            <tr>
+              <th>Before deposit</th>
+              <th>Preparing for delivery</th>
+              <th>Shipping</th>
+              <th>Delivery completed</th>
+              <th>Cancel</th>
+              <th>Exchange</th>
+              <th>Return</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </table>
+          <div class="reward-info">
+            <p>Available Reward Points: $0</p>
+            <p>Use Reward Points: $0</p>
+            <p>Total Reward Points: $0</p>
+            <p>Total Order: $0(0)</p>
+          </div>
+        </div>
+      `;
+      document.getElementById("main").appendChild(shoppingSection);
+    }
+    showPage("myshopping");
+  }
 });
