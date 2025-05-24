@@ -86,7 +86,7 @@ header {
   position: relative;
   clip-path: ellipse(42% 50% at 50% 50%);
   overflow: hidden;
-  transform: rotate(-23.5deg); /* 타원 기울기 */
+  transform: rotate(23.5deg); /* 타원 기울기 */
 }
 
 .product-card img {
