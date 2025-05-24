@@ -23,12 +23,12 @@
         <a href="#" onclick="showPage('top')">TOP</a>
         <a href="#" onclick="showPage('about')">ABOUT</a>
       </nav>
+      <!-- ✅ 로고 중앙 고정 구조 변경 -->
       <img src="logo-main.png" alt="odr logo" class="logo-center" onclick="showPage('top')" />
       <nav class="nav-right" id="nav-right">
         <a href="#" onclick="showPage('account')" id="account-link">ACCOUNT</a>
         <a href="#" onclick="showPage('cart')">CART</a>
-        <!-- ✅ 로그인 후 추가될 MYSHOPPING 버튼 -->
-        <!-- JS에서 동적으로 삽입됨 -->
+        <!-- ✅ 로그인 후 MYSHOPPING 버튼이 JS로 삽입됩니다 -->
       </nav>
     </header>
 
@@ -46,16 +46,17 @@
       </svg>
 
       <div class="product-grid">
-        <div class="product-card" onclick="showDetail(1)"><img src="product1.jpeg" alt="product1"></div>
-        <div class="product-card" onclick="showDetail(2)"><img src="product2.jpeg" alt="product2"></div>
-        <div class="product-card" onclick="showDetail(3)"><img src="product3.jpeg" alt="product3"></div>
-        <div class="product-card" onclick="showDetail(4)"><img src="product4.jpeg" alt="product4"></div>
-        <div class="product-card" onclick="showDetail(5)"><img src="product5.jpeg" alt="product5"></div>
-        <div class="product-card" onclick="showDetail(6)"><img src="product6.jpeg" alt="product6"></div>
-        <div class="product-card" onclick="showDetail(7)"><img src="product7.jpeg" alt="product7"></div>
-        <div class="product-card" onclick="showDetail(8)"><img src="product8.jpeg" alt="product8"></div>
-        <div class="product-card" onclick="showDetail(9)"><img src="product9.jpeg" alt="product9"></div>
-        <div class="product-card" onclick="showDetail(10)"><img src="product10.jpeg" alt="product10"></div>
+        <!-- ✅ 각 상품에 디졸브 애니메이션 class 적용 -->
+        <div class="product-card fade-in-product" onclick="showDetail(1)"><img src="product1.jpeg" alt="product1"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(2)"><img src="product2.jpeg" alt="product2"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(3)"><img src="product3.jpeg" alt="product3"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(4)"><img src="product4.jpeg" alt="product4"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(5)"><img src="product5.jpeg" alt="product5"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(6)"><img src="product6.jpeg" alt="product6"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(7)"><img src="product7.jpeg" alt="product7"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(8)"><img src="product8.jpeg" alt="product8"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(9)"><img src="product9.jpeg" alt="product9"></div>
+        <div class="product-card fade-in-product" onclick="showDetail(10)"><img src="product10.jpeg" alt="product10"></div>
       </div>
     </section>
 
@@ -82,7 +83,6 @@
         </div>
         <button onclick="handleLogin()">LOGIN</button>
         <p class="signup">Don't have an account?<br /><a href="#">Sign up</a></p>
-        <!-- ✅ 로그인 성공 시 나타나는 팝업 메시지 -->
         <div id="login-popup" style="opacity: 0;">Hello, <span id="login-user"></span>!</div>
       </div>
     </section>
@@ -97,7 +97,7 @@
       </div>
     </section>
 
-    <!-- ✅ MYSHOPPING 페이지 추가 -->
+    <!-- ✅ MYSHOPPING 페이지 -->
     <section id="myshopping" class="page">
       <div class="myshopping-box">
         <h2>MY SHOPPING</h2>
