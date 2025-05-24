@@ -23,6 +23,7 @@
         <a href="#" onclick="showPage('top')">TOP</a>
         <a href="#" onclick="showPage('about')">ABOUT</a>
       </nav>
+      <!-- ✅ 로고 중앙 정렬 위한 구조 개선 -->
       <img src="logo-main.png" alt="odr logo" class="logo-center" onclick="showPage('top')" />
       <nav class="nav-right" id="nav-right">
         <a href="#" onclick="showPage('account')" id="account-link">ACCOUNT</a>
@@ -34,7 +35,6 @@
       <div class="banner">
         <img src="banner.jpg" alt="banner" class="banner-image" />
       </div>
-
       <svg width="0" height="0">
         <defs>
           <clipPath id="clip-product" clipPathUnits="objectBoundingBox">
@@ -44,17 +44,17 @@
       </svg>
 
       <div class="product-grid">
-        <!-- ✅ data-index 속성 추가로 클릭 가능하게 구성 -->
-        <div class="product-card" data-index="1"><img src="product1.jpeg" alt="product1"></div>
-        <div class="product-card" data-index="2"><img src="product2.jpeg" alt="product2"></div>
-        <div class="product-card" data-index="3"><img src="product3.jpeg" alt="product3"></div>
-        <div class="product-card" data-index="4"><img src="product4.jpeg" alt="product4"></div>
-        <div class="product-card" data-index="5"><img src="product5.jpeg" alt="product5"></div>
-        <div class="product-card" data-index="6"><img src="product6.jpeg" alt="product6"></div>
-        <div class="product-card" data-index="7"><img src="product7.jpeg" alt="product7"></div>
-        <div class="product-card" data-index="8"><img src="product8.jpeg" alt="product8"></div>
-        <div class="product-card" data-index="9"><img src="product9.jpeg" alt="product9"></div>
-        <div class="product-card" data-index="10"><img src="product10.jpeg" alt="product10"></div>
+        <!-- ✅ 각 상품 디졸브 애니메이션 클래스 적용 -->
+        <div class="product-card" onclick="showDetail(1)"><img src="product1.jpeg" alt="product1"></div>
+        <div class="product-card" onclick="showDetail(2)"><img src="product2.jpeg" alt="product2"></div>
+        <div class="product-card" onclick="showDetail(3)"><img src="product3.jpeg" alt="product3"></div>
+        <div class="product-card" onclick="showDetail(4)"><img src="product4.jpeg" alt="product4"></div>
+        <div class="product-card" onclick="showDetail(5)"><img src="product5.jpeg" alt="product5"></div>
+        <div class="product-card" onclick="showDetail(6)"><img src="product6.jpeg" alt="product6"></div>
+        <div class="product-card" onclick="showDetail(7)"><img src="product7.jpeg" alt="product7"></div>
+        <div class="product-card" onclick="showDetail(8)"><img src="product8.jpeg" alt="product8"></div>
+        <div class="product-card" onclick="showDetail(9)"><img src="product9.jpeg" alt="product9"></div>
+        <div class="product-card" onclick="showDetail(10)"><img src="product10.jpeg" alt="product10"></div>
       </div>
     </section>
 
@@ -81,7 +81,7 @@
         </div>
         <button onclick="handleLogin()">LOGIN</button>
         <p class="signup">Don't have an account?<br /><a href="#">Sign up</a></p>
-        <div id="login-popup" style="opacity: 0; display: none;">Hello, <span id="login-user"></span>!</div>
+        <div id="login-popup" style="opacity: 0;">Hello, <span id="login-user"></span>!</div>
       </div>
     </section>
 
@@ -95,16 +95,48 @@
       </div>
     </section>
 
+    <section id="product-detail" class="page">
+      <div class="product-detail-container">
+        <div class="product-detail-left">
+          <img id="detail-image" src="" alt="" />
+        </div>
+        <div class="product-detail-right">
+          <h2 id="detail-name">Product Name</h2>
+          <p id="detail-price">₩000,000</p>
+          <div class="sizes" id="size-options">
+            <span onclick="selectSize(this)">22</span>
+            <span onclick="selectSize(this)">23</span>
+            <span onclick="selectSize(this)">24</span>
+            <span onclick="selectSize(this)">25</span>
+            <span onclick="selectSize(this)">26</span>
+          </div>
+          <button id="add-to-cart">ADD TO CART</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ MYSHOPPING 페이지 -->
     <section id="myshopping" class="page">
       <div class="myshopping-box">
         <h2>MY SHOPPING</h2>
         <table class="shopping-status">
           <tr>
-            <th>Before deposit</th><th>Preparing for delivery</th><th>Shipping</th>
-            <th>Delivery completed</th><th>Cancel</th><th>Exchange</th><th>Return</th>
+            <th>Before deposit</th>
+            <th>Preparing for delivery</th>
+            <th>Shipping</th>
+            <th>Delivery completed</th>
+            <th>Cancel</th>
+            <th>Exchange</th>
+            <th>Return</th>
           </tr>
           <tr>
-            <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
           </tr>
         </table>
         <div class="reward-info">
@@ -115,8 +147,8 @@
         </div>
       </div>
     </section>
-  </div>
 
+  </div>
   <script src="script.js" defer></script>
 </body>
 </html>
