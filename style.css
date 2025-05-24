@@ -99,6 +99,7 @@ header {
   object-fit: cover;
   transform: rotate(-23.5deg);
   display: block;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
