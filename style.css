@@ -219,6 +219,18 @@ header {
   margin-top: 2rem;
   border-radius: 8px;
   transition: opacity 1s ease;
+  display: none;
+}
+
+/* ✅ 로그아웃 버튼 */
+#logout-button {
+  background: none;
+  border: none;
+  color: #121212;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 2rem;
+  cursor: pointer;
 }
 
 /* Cart */
@@ -334,4 +346,35 @@ header {
   border: none;
   cursor: pointer;
   margin-top: 2rem;
+}
+
+/* ✅ MYSHOPPING 페이지 스타일 */
+.myshopping-box {
+  max-width: 960px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.myshopping-box h2 {
+  font-size: 24px;
+  margin-bottom: 2rem;
+}
+
+.shopping-status {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.shopping-status th,
+.shopping-status td {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  font-size: 14px;
+}
+
+.reward-info p {
+  font-size: 14px;
+  margin: 0.25rem 0;
+  color: #333;
 }
