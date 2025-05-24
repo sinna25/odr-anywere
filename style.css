@@ -36,9 +36,10 @@ body {
   transition: opacity 1s ease-in-out;
 }
 
+/* ✅ 로고 중앙 정렬 구조로 변경 */
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 1rem 2rem;
 }
@@ -46,6 +47,14 @@ header {
 .nav-left, .nav-right {
   display: flex;
   gap: 1.5rem;
+}
+
+.nav-left {
+  justify-self: start;
+}
+
+.nav-right {
+  justify-self: end;
 }
 
 .nav-left a, .nav-right a {
@@ -58,8 +67,7 @@ header {
 .logo-center {
   height: 32px;
   cursor: pointer;
-  display: block;
-  margin: 0 auto; /* ✅ 로고 중앙 정렬 */
+  justify-self: center;
 }
 
 /* Banner */
@@ -89,8 +97,9 @@ header {
   clip-path: ellipse(42% 50% at 50% 50%);
   overflow: hidden;
   transform: rotate(23.5deg);
-  pointer-events: auto; /* 클릭 가능하도록 명시 */
-  opacity: 0; /* ✅ 초기 투명도 */
+  pointer-events: auto;
+  opacity: 0;
+  animation: fadeInProduct 0.5s ease forwards;
 }
 
 .product-card img {
@@ -114,10 +123,6 @@ header {
 }
 
 /* ✅ 상품 디졸브 애니메이션 */
-.fade-in-product {
-  animation: fadeInProduct 0.5s ease forwards;
-}
-
 @keyframes fadeInProduct {
   to {
     opacity: 1;
@@ -224,7 +229,6 @@ header {
   text-decoration: none;
 }
 
-/* ✅ 로그인 성공 팝업 스타일 */
 #login-popup {
   opacity: 0;
   background-color: #121212;
@@ -236,7 +240,6 @@ header {
   display: none;
 }
 
-/* ✅ 로그아웃 버튼 */
 #logout-button {
   background: none;
   border: none;
