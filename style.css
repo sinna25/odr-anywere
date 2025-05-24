@@ -74,31 +74,26 @@ header {
 }
 
 /* Product Grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  justify-items: center;
+.product-wrapper {
+  width: 220px;
+  height: 280px;
+  transform: rotate(23.5deg);
+  cursor: pointer;
 }
 
 .product-card {
   width: 100%;
-  aspect-ratio: 1 / 1.2;
-  position: relative;
-  clip-path: ellipse(42% 50% at 50% 50%);
+  height: 100%;
+  clip-path: ellipse(45% 48% at 50% 50%);
   overflow: hidden;
-  transform: rotate(23.5deg);
-  pointer-events: auto; /* 클릭 가능하도록 명시 */
-  opacity: 0; /* ✅ 초기 투명도 */
+  pointer-events: none; /* 내부에서 이벤트 막힘 방지 */
 }
 
 .product-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: rotate(-23.5deg);
-  display: block;
+  transform: rotate(-23.5deg); /* 반대로 회전해서 자연스럽게 보이게 */
   pointer-events: none;
 }
 
