@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         productCards.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add("fade-in-product");
-          }, index * 100); // 순차적으로 0.1초 간격
+          }, index * 100);
         });
       }, 100);
     }, 1000);
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       cartItems.push(product);
       updateCart();
-      alert("장바구니에 담겼습니다.");
+      alert("장바구니에 당겨요.");
     };
   };
 
@@ -129,17 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const loginUser = document.getElementById("login-user");
       const navRight = document.querySelector(".nav-right");
 
-      // ✅ 입력창 숨기기
       loginBox.querySelectorAll("input, .password-wrap, button, .signup").forEach(el => el.style.display = "none");
-
-      // ✅ 팝업 표시
       loginUser.textContent = id;
       loginPopup.style.display = "block";
       setTimeout(() => {
         loginPopup.style.opacity = 1;
       }, 100);
 
-      // ✅ 2초 후 팝업 사라지고 로그아웃 버튼 생성
       setTimeout(() => {
         loginPopup.style.opacity = 0;
         setTimeout(() => {
@@ -158,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300);
       }, 2000);
 
-      // ✅ MYSHOPPING 메뉴 추가
       if (!document.getElementById("myshopping-link")) {
         const myshop = document.createElement("a");
         myshop.href = "#";
@@ -170,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         navRight.appendChild(myshop);
       }
     } else {
-      alert("아이디와 비밀번호를 입력해주세요.");
+      alert("아이드와 비밀번호를 입력해주세요.");
     }
   });
 
