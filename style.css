@@ -58,6 +58,8 @@ header {
 .logo-center {
   height: 32px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto; /* ✅ 로고 중앙 정렬 */
 }
 
 /* Banner */
@@ -80,25 +82,24 @@ header {
   justify-items: center;
 }
 
-/* ✅ 타원형 카드 마스킹 + 비율 유지 + 기울기 효과 */
 .product-card {
   width: 100%;
   aspect-ratio: 1 / 1.2;
   position: relative;
   clip-path: ellipse(42% 50% at 50% 50%);
   overflow: hidden;
-  transform: rotate(23.5deg); /* 타원 기울이기 */
+  transform: rotate(23.5deg);
+  opacity: 0; /* ✅ 초기 투명도 */
 }
 
 .product-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: rotate(-23.5deg); /* 이미지 보정 */
+  transform: rotate(-23.5deg);
   display: block;
 }
 
-/* ✅ 작은 화면에서도 타원 형태와 비율 유지 */
 @media (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -107,6 +108,17 @@ header {
 
   .product-card {
     aspect-ratio: 1 / 1.2;
+  }
+}
+
+/* ✅ 상품 디졸브 애니메이션 */
+.fade-in-product {
+  animation: fadeInProduct 0.5s ease forwards;
+}
+
+@keyframes fadeInProduct {
+  to {
+    opacity: 1;
   }
 }
 
