@@ -89,6 +89,7 @@ header {
   clip-path: ellipse(42% 50% at 50% 50%);
   overflow: hidden;
   transform: rotate(23.5deg);
+  pointer-events: auto; /* 클릭 가능하도록 명시 */
   opacity: 0; /* ✅ 초기 투명도 */
 }
 
